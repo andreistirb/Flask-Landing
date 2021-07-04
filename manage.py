@@ -14,7 +14,9 @@ from app import app, db
 from app.models import User, Email
 
 
-app.config.from_object(os.environ['APP_SETTINGS'])
+# app.config.from_object(os.environ['APP_SETTINGS'])
+# app.config.from_object("app.config.DevelopmentConfig")
+app.config.from_object("app.config.ProductionConfig")
 
 migrate = Migrate(app, db)
 manager = Manager(app)

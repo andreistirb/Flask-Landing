@@ -12,7 +12,7 @@ from app.mod_user.forms import LoginForm
 user_blueprint = Blueprint('user', __name__,)
 
 
-@user_blueprint.route('/login', methods=['GET', 'POST'])
+@user_blueprint.route('/albastru435', methods=['GET', 'POST'])
 def login():
     """Login page for admins."""
     form = LoginForm(request.form)
