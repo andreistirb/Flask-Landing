@@ -14,3 +14,4 @@ flake8==3.7.7
 Flask-Testing==0.7.1
 gunicorn
 email_validator
+psycopg2
