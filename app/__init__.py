@@ -11,7 +11,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, static_folder='static')
 # app.config.from_object(os.environ['APP_SETTINGS'])
-app.config.from_object("app.config.DevelopmentConfig")
+app.config.from_object("app.config.ProductionConfig")
 
 
 login_manager = LoginManager()
