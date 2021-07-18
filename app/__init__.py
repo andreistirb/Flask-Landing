@@ -16,7 +16,7 @@ app.config.from_object("app.config.ProductionConfig")
 
 login_manager = LoginManager()
 login_manager.init_app(app)
-bcrypt = Bcrypt(app)
+flask_bcrypt = Bcrypt(app)
 toolbar = DebugToolbarExtension(app)
 db = SQLAlchemy(app)
 

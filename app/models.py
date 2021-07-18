@@ -4,7 +4,7 @@
 import datetime
 from sqlalchemy import UniqueConstraint
 
-from app import db, bcrypt
+from app import db, flask_bcrypt
 
 
 class User(db.Model):
@@ -20,7 +20,7 @@ class User(db.Model):
     def __init__(self, email, password, admin=False):
         self.email = email
         # self.password = bcrypt.generate_password_hash(password)
-        self.password = bcrypt.hashpw(password.encode('utf8'), bcrypt.gensalt())
+        self.password = flask_bcrypt.hashpw(password.encode('utf8'), flask_bcrypt.gensalt())
         self.password = self.password.decode('utf8')
         self.registered_on = datetime.datetime.now()
         self.admin = admin
