@@ -37,6 +37,10 @@ class ProductionConfig(BaseConfig):
     SECRET_KEY = 'my_precious'
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    # SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/'
+    # database_name ='local_db_name_flask'
+    # database_name ='postgres'
+    # SQLALCHEMY_DATABASE_URI= "postgres://{}:{}@{}/{}".format('postgres', 'Irina2021', 'localhost:5433', database_name)
     if SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
         SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgres://", "postgresql://", 1)
     DEBUG_TB_ENABLED = False
