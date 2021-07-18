@@ -5,7 +5,7 @@ from flask import render_template, Blueprint, url_for, \
 from flask_login import login_user, logout_user, \
     login_required
 
-from app import bcrypt
+from app import flask_bcrypt
 from app.models import User, Email
 from app.mod_user.forms import LoginForm
 
@@ -18,7 +18,7 @@ def login():
     form = LoginForm(request.form)
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
-        if user and bcrypt.check_password_hash(
+        if user and flask_bcrypt.check_password_hash(
                 user.password, request.form['password']):
             login_user(user)
             flash('You are logged in. Welcome!', 'success')
