@@ -1,6 +1,6 @@
 # manage.py
 
-
+import datetime
 import os
 import sys
 import unittest
@@ -14,9 +14,9 @@ from app import app, db
 from app.models import User, Email
 
 
-# app.config.from_object(os.environ['APP_SETTINGS'])
+app.config.from_object(os.environ['APP_SETTINGS'])
 # app.config.from_object("app.config.DevelopmentConfig")
-app.config.from_object("app.config.ProductionConfig")
+# app.config.from_object("app.config.ProductionConfig")
 
 migrate = Migrate(app, db)
 manager = Manager(app)
@@ -76,7 +76,7 @@ def drop_db():
 @manager.command
 def create_admin():
     """Creates the admin user."""
-    db.session.add(User(email="imgupscale@protonmail.com", password="adminimg", admin=True))
+    db.session.add(User(email="imgupscale@protonmail.com", password="adminimg", admin=True, confirmed=True, confirmed_on=datetime.datetime.now()))
     db.session.commit()
 
 

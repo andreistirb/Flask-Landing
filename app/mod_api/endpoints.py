@@ -26,7 +26,8 @@ class SignUp(Resource):
             email = Email(
                 email=args.get('email'),
                 source=args.get('source'),
-                form_data_as_json=args.get('form_data_as_json')
+                form_data_as_json=args.get('form_data_as_json'),
+                confirmed=False
             )
         try:
             db.session.add(email)

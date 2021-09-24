@@ -7,11 +7,12 @@ from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
 from flask_debugtoolbar import DebugToolbarExtension
 from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail
 
 
 app = Flask(__name__, static_folder='static')
-# app.config.from_object(os.environ['APP_SETTINGS'])
-app.config.from_object("app.config.ProductionConfig")
+app.config.from_object(os.environ['APP_SETTINGS'])
+# app.config.from_object("app.config.ProductionConfig")
 
 
 login_manager = LoginManager()
@@ -19,6 +20,7 @@ login_manager.init_app(app)
 flask_bcrypt = Bcrypt(app)
 toolbar = DebugToolbarExtension(app)
 db = SQLAlchemy(app)
+mail = Mail(app)
 
 
 from app.mod_main.views import main_blueprint  # noqa: E402
