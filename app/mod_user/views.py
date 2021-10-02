@@ -6,6 +6,7 @@ from flask_login import login_user, logout_user, \
     login_required
 
 from app import flask_bcrypt
+from app.mod_main.views import confirm_email
 from app.models import User, Email
 from app.mod_user.forms import LoginForm
 
@@ -56,7 +57,8 @@ def embed_code():
 @login_required
 def download_emails():
     """Downloads emails."""
-    signups = Email.query.all()
+    # signups = Email.query.all()
+    signups = Email.query.filter_by(confirmed = True)
 
     def generate_csv():
         for e in signups:

@@ -76,7 +76,7 @@ def drop_db():
 @manager.command
 def create_admin():
     """Creates the admin user."""
-    db.session.add(User(email="imgupscale@protonmail.com", password="adminimg", admin=True, confirmed=True, confirmed_on=datetime.datetime.now()))
+    db.session.add(User(email="imgupscale@protonmail.com", password="Irina2021:)", admin=True, confirmed=True, confirmed_on=datetime.datetime.now()))
     db.session.commit()
 
 
