@@ -55,7 +55,7 @@ def index():
                             print("Exception when calling ContactsApi -> create_contact: {}".format(e))
                         flash("Thank you for subscribing!", 'success')
                     
-                except ApiException as e:qw
+                except ApiException as e:
                     print("Exception when calling ListsApi -> get_contacts_from_list {}".format(e))
 
             
