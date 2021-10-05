@@ -17,3 +17,4 @@ Flask-Testing==0.7.1
 gunicorn
 email_validator
 psycopg2
+sib-api-v3-sdk

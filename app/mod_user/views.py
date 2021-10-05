@@ -10,7 +10,16 @@ from app.mod_main.views import confirm_email
 from app.models import User, Email
 from app.mod_user.forms import LoginForm
 
+import os
+
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+
 user_blueprint = Blueprint('user', __name__,)
+
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = os.environ["SIB_APIKEY"]
+lists_api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 
 
 @user_blueprint.route('/albastru435', methods=['GET', 'POST'])
@@ -42,7 +51,11 @@ def logout():
 @login_required
 def admin():
     """Displays submitted emails to the admin."""
-    signups = Email.query.all()
+    list_id = 5
+    api_response = lists_api_instance.get_contacts_from_list(list_id)
+    contacts_list = api_response.contacts
+    signups = [e["email"] for e in contacts_list]
+    # signups = Email.query.all()
     return render_template('user/admin.html', signups=signups)
 
 
