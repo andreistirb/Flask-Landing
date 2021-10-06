@@ -8,12 +8,12 @@
             <div class="row justify-content-center min-vh-100 align-items-center">
                 <div class="col-lg-8 text-center">
                     <div class="mb-4">
-                        <img src="{{url_for('static', filename='img/Logo_hr.png')}}" title="" alt="" width="128">
+                        <img src="{{url_for('static', filename='img/Logo_hr.png')}}" title="" alt="Logo" width="128">
                     </div>
                     <!-- <img src="{{url_for('static', filename='img/logo_long.png')}}" width="128"> -->
-                    <h2 class="display-2 text-white mb-3">We are coming soon..</h2>
+                    <h1 class="display-2 text-white mb-3">We are coming soon..</h1>
                     <p class="h5 text-white-50 pb-4 font-w-400">Our website is under construction.</p>
-                    <p class="h5 text-white-50 pb-4 font-w-400">Please subscribe to the newsletter for updates! Until then watch our presentation <a href="https://www.youtube.com/channel/UCtDc4-XUGWUyfEmSqPfxKWQ">video</a></p>
+                    <p class="h5 text-white-50 pb-4 font-w-400">Please subscribe to the newsletter for updates! Until then watch our presentation <a href="https://youtu.be/shhmnyjgLwY" target="_blank">video</a></p>
                     <form class="d-flex flex-row mb-2 p-1 bg-white input-group" role="form" method="post" action="/">
                         {{ form.csrf_token }}
                         <!-- <input type="email" id="email" class="form-control rounded-0 border-0" placeholder="name@mail.com"> -->
@@ -30,7 +30,7 @@
 
                         <button class="btn btn-secondary rounded-0 flex-shrink-0" type="submit">Subscribe</button>
                     </form>
-                    <h5 class="text-white mb-4" style="font-size: 0.7rem">*by subscribing to the newsletter you are approving our <a href="{{ url_for('main.privacy_policy') }}">Privacy Policy</a></h5>
+                    <h2 class="text-white mb-4" style="font-size: 0.7rem">*by subscribing to the newsletter you are approving our <a href="{{ url_for('main.privacy_policy') }}">Privacy Policy</a></h2>
                     {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
                     <div class="alert alert-{{ category }}">
                         <a class="close" title="Close" href="#" data-dismiss="alert">&times;</a> {{message}}

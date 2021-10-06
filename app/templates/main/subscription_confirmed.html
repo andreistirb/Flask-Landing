@@ -1,0 +1,16 @@
+{% extends "_base.html" %} {% block title %} - Welcome{% endblock %} {% block content %}
+<!-- Section -->
+<section class="bg-center bg-cover bg-fiexd effect-section" style="background-image: url(static/img/19691_2.png);">
+    <div class="container">
+        <div class="row justify-content-center min-vh-100 align-items-center">
+            <div class="col-lg-8 text-center">
+                <div class="mb-4">
+                    <img src="{{url_for('static', filename='img/Logo_hr.png')}}" title="" alt="" width="128">
+                </div>
+                <h2 class="display-6 text-white mb-6">Thank you for subscribing!</h2>                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End section -->
+{% endblock %}

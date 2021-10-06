@@ -110,3 +110,7 @@ def confirm_email(token):
 @main_blueprint.route('/privacy_policy')
 def privacy_policy():
     return render_template('main/privacy_policy.html')
+
+@main_blueprint.route('/subscription_confirmed')
+def subscription_confirmed():
+    return render_template('main/subscription_confirmed.html')
