@@ -53,7 +53,7 @@ def index():
                             print(contact_create_api_response)
                         except ApiException as e:
                             print("Exception when calling ContactsApi -> create_contact: {}".format(e))
-                        flash("Thank you for subscribing!", 'success')
+                        flash("Thank you for subscribing! Check your inbox for confirmation email", 'success')
                     
                 except ApiException as e:
                     print("Exception when calling ListsApi -> get_contacts_from_list {}".format(e))
